@@ -24,6 +24,7 @@
 
 #REQUIREMENTS
 pip install pygame
+pip install baseplate
 
 
 #GAME INFO
