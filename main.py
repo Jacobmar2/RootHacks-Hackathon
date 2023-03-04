@@ -3,29 +3,26 @@
 
 # import modules
 import pygame
-import time
-import components.screen as screen
-import states.welcomeScreen as welcomeScreen
+import sys
+from states.splashScreen import Splash
+from states.battleScreen import Battle
+from states.upgradeScreen import Upgrade
+from states.victoryScreen import Victory
 
 # initiate pygame screen
 pygame.init()
 done = False
 
-screen.setScreen(800, 600)
+screen = pygame.display.set_mode((800,600))
+states = {
+    "SPLASH": Splash(),
+    "BATTLE": Battle(),
+    "UPGRADE": Upgrade(),
+    "VICTORY": Victory()
+}
 
-# Run until the user asks to quit
-running = True
-while running:
+stateManager = StateManager(screen, states, "SPLASH")
+stateManager.run()
 
-    welcomeScreen.showWelcome()
-    
-    # Did the user click the window close button?
-    for event in pygame.event.get():
-        if event.type == pygame.QUIT:
-            running = False
-
-    # Flip the display
-    pygame.display.flip()
-    
-# Done! Time to quit.
 pygame.quit()
+sys.exit
