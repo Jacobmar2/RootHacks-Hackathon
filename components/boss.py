@@ -1,4 +1,4 @@
-class boss:
+class Boss:
     def __init__(self, health):
         self.health = health
 

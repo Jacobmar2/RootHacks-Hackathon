@@ -44,11 +44,12 @@ def stats(first, second, third):
 # upgrade = [dmg,def,dodge]
 def upgrade(first, second, third):
     # create an instance of the hero class
-    hero_instance = hero.hero(0, 0, 0, 0)
-    hero_instance.uHealth(500)
+    hero_instance = hero.Hero(0, 0, 0, 0)
 
     # update hero based on stats
+    hero_instance.uHealth(new_health=500)
     statLst = stats(first, second, third)
-    hero_instance.uDmg(statLst[0])
-    hero_instance.uDefence(statLst[1])
-    hero_instance.uDodge(statLst[2])
+    hero_instance.uDmg(new_damage=statLst[0])
+    hero_instance.uDefence(new_defence=statLst[1])
+    hero_instance.uDodge(new_dodge=statLst[2])
+    return hero_instance

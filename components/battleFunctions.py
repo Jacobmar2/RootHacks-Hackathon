@@ -5,8 +5,8 @@ import components.hero as hero, components.boss as boss
 
 def battle(bossHlth, heroDmg, heroHlth, heroDef, heroDodge):
     # create an instance of hero class and boss class
-    hero_instance = hero.hero(heroDmg, heroHlth, heroDef, heroDodge)
-    boss_instance = boss.boss(bossHlth)
+    hero_instance = hero.Hero(heroDmg, heroHlth, heroDef, heroDodge)
+    boss_instance = boss.Boss(bossHlth)
 
     heroHealth = heroHlth
     # hero deals damage (0-100)

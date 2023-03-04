@@ -1,4 +1,4 @@
-class hero:
+class Hero:
     def __init__(self, health, dmg, defence, dodge):
         self.dmg = dmg
         self.health = health
