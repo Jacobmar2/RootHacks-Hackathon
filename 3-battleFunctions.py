@@ -1,7 +1,10 @@
 #import modules
 import random
 
-def battle(bossHlth,heroDmg,heroHlth,heroDef):
-    # choose random boss damage
-    bossDmg = random.choice(range(50,100))
+def battle(bossHlth,heroDmg,heroHlth,heroDef,heroDodge):
+    # initialize variables
+    bossDmg = random.choice(range(50,200))
+    heroHealth = heroHlth
+
     
+    return(heroHealth,bossHealth)
