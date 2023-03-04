@@ -39,6 +39,7 @@ class PlaceholderMovement:
         self.speed = speed
         self.image = image
         self.pos = image.get_rect().move(0, height)
+        
     def move(self, up=False, down=False, left=False, right=False):
         if right:
             self.pos.right += self.speed
