@@ -12,7 +12,7 @@ def battle(bossHlth, heroDmg, heroHlth, heroDef, heroDodge):
     # hero deals damage (0-100)
     bossHealth = bossHlth - heroDmg
     # update boss class health
-    boss_instance.update_health(bossHealth)
+    boss_instance.uHealth(bossHealth)
 
     # dodge (0-100)
     dodge = random.choice(range(0, 100))
@@ -24,5 +24,5 @@ def battle(bossHlth, heroDmg, heroHlth, heroDef, heroDodge):
     bossDmg = bossDmg - (bossDmg * (heroDef / 100))
     heroHealth -= bossDmg
     # update hero class health
-    hero_instance.update_health(hero_instance.health - bossDmg)
+    hero_instance.uHealth(hero_instance.health - bossDmg)
     return

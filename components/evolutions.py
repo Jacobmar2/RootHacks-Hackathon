@@ -42,28 +42,13 @@ def stats(first, second, third):
 
 
 # upgrade = [dmg,def,dodge]
-def upgrade(value):
+def upgrade(first, second, third):
     # create an instance of the hero class
-    hero_instance = hero.hero(500, 0, 0, 0)
-    # define global variables
-    global un, deux, trois
-    # check which place value to add to
-    if un == -1:
-        un = value
-    elif deux == -1:
-        deux = value
-    elif trois == -1:
-        trois = value
-    else:
-        return -1
+    hero_instance = hero.hero(0, 0, 0, 0)
+    hero_instance.uHealth(500)
 
-
-    statLst = stats(un, deux, trois)
+    # update hero based on stats
+    statLst = stats(first, second, third)
     hero_instance.uDmg(statLst[0])
     hero_instance.uDefence(statLst[1])
     hero_instance.uDodge(statLst[2])
-
-
-un = -1
-deux = -1
-trois = -1
