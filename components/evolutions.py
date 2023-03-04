@@ -1,6 +1,4 @@
-import hero, heroBattleTest
-
-hero_instance = hero.hero(health, dmg, defence, dodge)
+import hero
 
 
 # upgrade function
@@ -45,6 +43,8 @@ def stats(first, second, third):
 
 # upgrade = [dmg,def,dodge]
 def upgrade(value):
+    # create an instance of the hero class
+    hero_instance = hero.hero(500, 0, 0, 0)
     # define global variables
     global un, deux, trois
     # check which place value to add to
@@ -59,7 +59,6 @@ def upgrade(value):
 
 
     statLst = stats(un, deux, trois)
-
     hero_instance.uDmg(statLst[0])
     hero_instance.uDefence(statLst[1])
     hero_instance.uDodge(statLst[2])

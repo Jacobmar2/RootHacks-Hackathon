@@ -1,5 +1,3 @@
-import heroCounter
-
 class hero:
     def __init__(self, health, dmg, defence, dodge):
         self.dmg = dmg
