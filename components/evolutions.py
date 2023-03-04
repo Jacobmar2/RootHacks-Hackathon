@@ -61,6 +61,7 @@ def upgrade(value):
     hero_instance.uDodge(new_dodge=statLst[2])
     return hero_instance
 
+
 first = -1
 second = -1
 third = -1
