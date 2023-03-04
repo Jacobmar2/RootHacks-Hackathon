@@ -52,13 +52,13 @@ def upgrade(value):
         un = value
     elif deux == -1:
         deux = value
-    elif tois == -1:
-        tois = value
+    elif trois == -1:
+        trois = value
     else:
         return -1
 
 
-    statLst = stats(un, deux, tois)
+    statLst = stats(un, deux, trois)
 
     hero_instance.uDmg(statLst[0])
     hero_instance.uDefence(statLst[1])
@@ -67,4 +67,4 @@ def upgrade(value):
 
 un = -1
 deux = -1
-tois = -1
+trois = -1
