@@ -8,17 +8,11 @@ class hero:
     def update_health(self, new_health):
         self.health = new_health
 
-    def start(self):
-        self.health = 500
-        self.dmg = 50
-        self.defence = 0
-        self.dodge = 0
-
     def print_stats(self):
-        print("Health = " + self.health)
-        print("Damage = " + self.dmg)
-        print("Defence = " + self.defence)
-        print("Dodge = " + self.dodge)
+        print("Health = " , self.health)
+        print("Damage = " , self.dmg)
+        print("Defence = " , self.defence)
+        print("Dodge = " , self.dodge)
 
     def decision(self, choice):
         # choice is boolean, yes is right, no is left
