@@ -2,7 +2,6 @@
 import random
 import hero, boss
 
-
 def battle(bossHlth,heroDmg,heroHlth,heroDef,heroDodge):
     heroHealth = heroHlth
     # hero deals damage (0-100)
