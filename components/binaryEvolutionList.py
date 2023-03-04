@@ -4,11 +4,11 @@ hero_instance = hero.hero(health, dmg, defence, dodge)
 
 
 # upgrade function
-def upgrade(first, second, third):
+def stats(first, second, third):
     # first choice
-    if first == 0 and second == -1:
+    if first == 0 and second == -1 and third == -1:
         return [130, 0, 0]
-    elif first == 1 and second == -1:
+    elif first == 1 and second == -1 and third == -1:
         return [50, 30, 0]
 
     # second choice
@@ -43,12 +43,28 @@ def upgrade(first, second, third):
     return -1
 
 
+# upgrade = [dmg,def,dodge]
+def upgrade(value):
+    # define global variables
+    global first, second, third
+    # check which place value to add to
+    if first == -1:
+        first = value
+    elif second == -1:
+        second = value
+    elif third == -1:
+        third = value
+    else:
+        return -1
+
+
+    statLst = stats(first, second, third)
+
+    hero_instance.uDmg(statLst[0])
+    hero_instance.uDefence(statLst[1])
+    hero_instance.uDodge(statLst[2])
+
+
 first = -1
 second = -1
 third = -1
-
-# upgrade = [dmg,def,dodge]
-stats = upgrade(first, second, third)
-hero_instance.uDmg(stats[0])
-hero_instance.uDefence(stats[1])
-hero_instance.uDodge(stats[2])
