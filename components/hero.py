@@ -14,6 +14,12 @@ class hero:
         self.defence = 0
         self.dodge = 0
 
+    def printstats(self):
+        print("Health = " + self.health)
+        print("Damage = " + self.dmg)
+        print("Defence = " + self.defence)
+        print("Dodge = " + self.dodge)
+
     def decision(self, choice):
         # choice is boolean, yes is right, no is left
         if choice:
@@ -22,7 +28,7 @@ class hero:
             self.dmg += 80
 
     def decision2(self, choice2):
-        if self.choice: #right side
+        if self.choice:  # right side
             if self.choice2:
                 self.dodge += 50
             else:
