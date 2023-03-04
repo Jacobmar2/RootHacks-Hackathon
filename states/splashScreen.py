@@ -1,16 +1,19 @@
 import pygame
-import components.screen as screen
+from .base import BaseState
 
-def showWelcome():
-    # show welcome screen
-    # set the pygame window name
-    pygame.display.set_caption('Welcome!')
+class Splash(BaseState):
+    def __init__(self):
+        super(Splash, self).__init__()
+        self.title = self.font.render("Root Game", True, pygame.Color("blue"))
+        self.title_rect = self.title.get_rect(center = self.screen_rect.center)
+        self.next_state = "UPGRADE"
+        self.time_active = 0
 
-    # create a surface object, image is drawn on it.
-    imp = pygame.image.load("images/welcome.png").convert()
-
-    # Using blit to copy content from one surface to other
-    screen.screen.blit(imp, (0, 0))
-
-    # paint screen one time then wait 5s
-    pygame.display.flip()
+    def update(self, dt):
+        self.time_active += dt
+        if self.time_active >= 5000:
+            self.done = True
+            
+    def draw(self, surface):
+        surface.fill(pygame.Color("black"))
+        surface.blit(self.title, self.title_rect)
