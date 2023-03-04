@@ -4,5 +4,5 @@ Team Members:
 
 Peter Soava
 Kate Simeonoff
-Jacob
+Jacob Martinez
 Leo Zhi
