@@ -14,7 +14,7 @@ class hero:
         self.defence = 0
         self.dodge = 0
 
-    def printstats(self):
+    def print_stats(self):
         print("Health = " + self.health)
         print("Damage = " + self.dmg)
         print("Defence = " + self.defence)
