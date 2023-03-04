@@ -40,7 +40,27 @@ class PlaceholderMovement:
         self.speed = speed
         self.image = image
         self.pos = image.get_rect().move(0, height)
-        
+        self.rect = image.get_rect()
+
+        self.counter = 0
+
+
+    def move(self):
+        distance = 80
+        speed = 8
+
+        if self.counter >= 0 and self.counter <= distance:
+            self.pos.right += speed
+        elif self.counter >= distance and self.counter <= distance*2:
+            self.pos.right -= speed
+        else:
+            self.counter = 0
+
+        self.counter += 1
+
+
+'''
+
     def move(self, up=False, down=False, left=False, right=False):
         if right:
             self.pos.right += self.speed
@@ -50,3 +70,4 @@ class PlaceholderMovement:
             self.pos.top += self.speed
         if up:
             self.pos.top -= self.speed
+ '''    
