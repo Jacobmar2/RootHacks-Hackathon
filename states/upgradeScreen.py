@@ -4,7 +4,7 @@ from .base import BaseState
 class Upgrade(BaseState):
     def __init__(self):
         super(Upgrade, self).__init__()
-        self.active_index = 0
+        self.active_index = 0   # Variable that holds if left/right key were pressed
         self.options = ["Left, Right"]
         self.next_state = "BATTLE"
         
@@ -21,20 +21,21 @@ class Upgrade(BaseState):
             self.done = True
         elif self.active_index == 1:
             self.quit = True
-            
+    
+    # Controls  
     def get_event(self, event):
         if event.type == pygame.QUIT:
             self.quit = True
         elif event.type == pygame.KEYUP:
-            if event.key == pygame.K_UP:
+            if event.key == pygame.K_RIGHT:
                 self.active_index = 1 if self.active_index <= 0 else 0
-            elif event.key == pygame.K_DOWN:
+            elif event.key == pygame.K_LEFT:
                 self.active_index = 0 if self.active_index >= 1 else 1
             elif event.key == pygame.K_RETURN:
                 self.handle_action()
-                
+           
     def draw(self, surface):
         surface.fill(pygame.Color("black"))
-        for index, option in enumerate(self.options):
+        for index, option in enumerate(self.options):   # Loops to update text when button is pressed
             text_render = self.render_text(index)
             surface.blit(text_render, self.get_text_position(text_render, index))

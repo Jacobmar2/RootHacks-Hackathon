@@ -30,6 +30,9 @@ class StateManager(object):
             self.flip_state()
         self.state.update(dt)
         
+    def draw(self):
+        self.state.draw(self.screen)
+        
     def run(self):
         while not self.done:
             dt = self.clock.tick(self.fps)

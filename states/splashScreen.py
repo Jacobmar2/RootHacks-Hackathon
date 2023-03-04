@@ -4,16 +4,17 @@ from .base import BaseState
 class Splash(BaseState):
     def __init__(self):
         super(Splash, self).__init__()
-        self.title = self.font.render("Root Game", True, pygame.Color("blue"))
-        self.title_rect = self.title.get_rect(center = self.screen_rect.center)
+        self.title = self.font.render("Root Game", True, pygame.Color("blue"))  # Text
+        self.title_rect = self.title.get_rect(center=self.screen_rect.center)   # Location on screen text generates
         self.next_state = "UPGRADE"
         self.time_active = 0
 
+    # Update function keep splash screen open for 5 seconds
     def update(self, dt):
         self.time_active += dt
         if self.time_active >= 5000:
             self.done = True
             
     def draw(self, surface):
-        surface.fill(pygame.Color("black"))
-        surface.blit(self.title, self.title_rect)
+        surface.fill(pygame.Color("black"))         # Background
+        surface.blit(self.title, self.title_rect)   # Text generation
