@@ -18,20 +18,22 @@ pygame.display.set_caption('Welcome!')
 imp = pygame.image.load("images/welcome.png").convert()
 
 # Using blit to copy content from one surface to other
-scrn.blit(imp, (0, 0))
+screen.blit(imp, (0, 0))
 
 # paint screen one time then wait 5s
 pygame.display.flip()
-status = True
-while (status):
 
-    # iterate over the list of Event objects
-    # that was returned by pygame.event.get() method.
-    for i in pygame.event.get():
+# Run until the user asks to quit
+running = True
+while running:
 
-        # if event object type is QUIT
-        # then quitting the pygame
-        # and program both.
-        if i.type == pygame.QUIT:
-            status = False
-time.sleep(5)
+    # Did the user click the window close button?
+    for event in pygame.event.get():
+        if event.type == pygame.QUIT:
+            running = False
+
+    # Flip the display
+    pygame.display.flip()
+    
+# Done! Time to quit.
+pygame.quit()
