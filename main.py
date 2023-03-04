@@ -7,7 +7,7 @@ import time
 
 # initiate pygame screen
 pygame.init()
-screen = pygame.display.set_mode((600, 600))
+screen = pygame.display.set_mode((800, 600))
 done = False
 
 # show welcome screen
