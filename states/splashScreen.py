@@ -12,7 +12,7 @@ class Splash(BaseState):
     # Update function keep splash screen open for 5 seconds
     def update(self, dt):
         self.time_active += dt
-        if self.time_active >= 5000:
+        if self.time_active >= 500:
             self.done = True
             
     def draw(self, surface):
