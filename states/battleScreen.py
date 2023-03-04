@@ -1,4 +1,6 @@
 import pygame
-import main
+from .base import BaseState
 
-main.getScreen.fill(255,255,255)
+class Battle(BaseState):
+    def __init__(self):
+        super(Battle, self).__init__()
