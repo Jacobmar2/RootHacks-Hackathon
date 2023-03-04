@@ -10,6 +10,9 @@ pygame.init()
 screen = pygame.display.set_mode((800, 600))
 done = False
 
+def getScreen():
+    return screen
+
 # show welcome screen
 # set the pygame window name
 pygame.display.set_caption('Welcome!')
