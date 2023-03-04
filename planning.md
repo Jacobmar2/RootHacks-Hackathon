@@ -22,5 +22,14 @@
 
 
 
-*REQUIREMENTS* 
+#REQUIREMENTS
 pip install pygame
+
+
+#GAME INFO
+dimensions: 800x600
+boss health: 500
+hero health: 100
+hero defence: 0-100% (int)
+hero attack: 0-100% (int)
+hero dodge: 0-100% (int)
