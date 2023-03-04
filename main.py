@@ -4,32 +4,21 @@
 # import modules
 import pygame
 import time
+import screen
+import welcomeScreen
 
 # initiate pygame screen
 pygame.init()
-screen = pygame.display.set_mode((800, 600))
 done = False
 
-def getScreen():
-    return screen
-
-# show welcome screen
-# set the pygame window name
-pygame.display.set_caption('Welcome!')
-
-# create a surface object, image is drawn on it.
-imp = pygame.image.load("images/welcome.png").convert()
-
-# Using blit to copy content from one surface to other
-screen.blit(imp, (0, 0))
-
-# paint screen one time then wait 5s
-pygame.display.flip()
+screen.setScreen(800, 600)
 
 # Run until the user asks to quit
 running = True
 while running:
 
+    welcomeScreen.showWelcome()
+    
     # Did the user click the window close button?
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
