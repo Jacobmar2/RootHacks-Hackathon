@@ -19,3 +19,8 @@
 
 8. list to track evolution
 
+
+
+
+*REQUIREMENTS* 
+pip install pygame
