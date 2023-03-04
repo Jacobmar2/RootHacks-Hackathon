@@ -3,28 +3,35 @@
 
 # import modules
 import pygame
+import time
 
 # initiate pygame screen
 pygame.init()
-screen = pygame.display.set_mode((400, 500))
+screen = pygame.display.set_mode((600, 600))
+done = False
 
-# Stops window from closing without user input
-running = True
-while running:
+# show welcome screen
+# set the pygame window name
+pygame.display.set_caption('Welcome!')
 
-    # Did the user click the window close button?
-    for event in pygame.event.get():
-        if event.type == pygame.QUIT:
-            running = False
+# create a surface object, image is drawn on it.
+imp = pygame.image.load("images/welcome.png").convert()
 
-    # Fill the background with white
-    screen.fill((255, 255, 255))
+# Using blit to copy content from one surface to other
+screen.blit(imp, (0, 0))
 
-    # Draw a solid blue circle in the center
-    pygame.draw.circle(screen, (0, 0, 255), (250, 250), 75)
+# paint screen one time then wait 5s
+pygame.display.flip()
+status = True
+while (status):
 
-    # Flip the display
-    pygame.display.flip()
+    # iterate over the list of Event objects
+    # that was returned by pygame.event.get() method.
+    for i in pygame.event.get():
 
-# Done! Time to quit.
-pygame.quit()
+        # if event object type is QUIT
+        # then quitting the pygame
+        # and program both.
+        if i.type == pygame.QUIT:
+            status = False
+time.sleep(5)
