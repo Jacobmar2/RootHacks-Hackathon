@@ -11,7 +11,7 @@ canvas = pygame.display.set_mode((500,500))
 # TITLE OF CANVAS
 pygame.display.set_caption("Show Image")
 
-image = pygame.image.load("637287812520744229.png")
+image = pygame.image.load("images/victory.png")
 exit = False
 
 while not exit:
