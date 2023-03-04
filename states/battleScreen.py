@@ -6,7 +6,7 @@ class Battle(BaseState):
         super(Battle, self).__init__()
         self.rect = pygame.Rect((0, 0), (80, 80))
         self.rect.center = self.screen_rect.center
-        self.character = pygame.image.load('images/plantguy2.png')
+        self.character = pygame.image.load('images/plantguy.png')
         self.character_spawn = self.character.get_rect(center=self.screen_rect.center)
         self.x = 0
         self.y = 0
