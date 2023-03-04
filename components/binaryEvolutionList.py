@@ -46,7 +46,7 @@ def stats(first, second, third):
 # upgrade = [dmg,def,dodge]
 def upgrade(value):
     # define global variables
-    global un, deux, tois
+    global un, deux, trois
     # check which place value to add to
     if un == -1:
         un = value
