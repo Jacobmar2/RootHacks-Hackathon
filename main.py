@@ -4,6 +4,7 @@
 # import modules
 import pygame
 import sys
+from stateManager import StateManager
 from states.splashScreen import Splash
 from states.battleScreen import Battle
 from states.upgradeScreen import Upgrade
