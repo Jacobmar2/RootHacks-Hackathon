@@ -27,7 +27,7 @@ class Hero:
 
 
     # Nested Health Bar Class
-    class Healthbar(pygame.sprite, Sprite):
+    #class Healthbar(pygame.sprite, Sprite):
         def __init__(self):
             super().__init__()
             self.image = pygame.Surface((400, 400))
