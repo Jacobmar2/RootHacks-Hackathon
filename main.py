@@ -4,7 +4,7 @@
 # import modules
 import pygame
 import time
-import screen
+import components.screen as screen
 import states.welcomeScreen as welcomeScreen
 
 # initiate pygame screen

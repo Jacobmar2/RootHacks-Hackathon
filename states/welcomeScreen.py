@@ -1,5 +1,5 @@
 import pygame
-import screen
+import components.screen as screen
 
 def showWelcome():
     # show welcome screen
