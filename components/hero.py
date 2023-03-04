@@ -1,65 +1,42 @@
-class hero:
-    def __init__(self, dmg, health, defence, dodge):
+class Hero:
+    def __init__(self, health, dmg, defence, dodge):
         self.dmg = dmg
         self.health = health
         self.defence = defence
         self.dodge = dodge
 
-    def update_health(self, new_health):
+    def uHealth(self, new_health):
+        if new_health < 0:
+            self.health = 0
         self.health = new_health
 
+    def uDmg(self, new_damage):
+        self.dmg = new_damage
+
+    def uDefence(self, new_defence):
+        self.defence = new_defence
+
+    def uDodge(self, new_dodge):
+        self.dodge = new_dodge
+
     def print_stats(self):
-        print("Health = " , self.health)
-        print("Damage = " , self.dmg)
-        print("Defence = " , self.defence)
-        print("Dodge = " , self.dodge)
+        print("Health = ", self.health)
+        print("Damage = ", self.dmg)
+        print("Defence = ", self.defence)
+        print("Dodge = ", self.dodge)
 
-    def decision(self, choice):
-        # choice is boolean, yes is right, no is left
-        print("Make your choice. Left button for +80 damage, Right button for +30 defence")
-        if choice:
-            self.defence += 30
-        else:
-            self.dmg += 80
 
-    def decision2(self, choice2):
-        if self.choice:  # right side
-            print("Make your choice. Left button for +50 damage, Right button for +50 dodge")
-            if self.choice2:
-                self.dodge += 50
-            else:
-                self.dmg += 50
-        else:
-            print("Make your choice. Left button for +100 damage, Right button for +30 dodge")
-            if choice2:
-                self.dodge += 30
-            else:
-                self.dmg += 100
+    # Nested Health Bar Class
+    #class Healthbar(pygame.sprite, Sprite):
+        def __init__(self):
+            super().__init__()
+            self.image = pygame.Surface((400, 400))
+            self.image.fill((240, 240, 240))
+            self.rect = self.image.get_rect(centre=(400, 400))
+            self.current_health =
+            self.maximum_health = 500
+            self.health_bar_length = 250
+            self.health_ratio = self.maximum_health / self.health_bar_length
 
-    def decision3(self, choice3):
-        if self.choice:
-            if self.choice2:
-                print("Make your choice. Left button for +150 damage, Right button for +40 dodge")
-                if self.choice3:
-                    self.dodge += 40
-                else:
-                    self.dmg += 150
-            else:
-                print("Make your choice. Left button for +70 defence, Right button for +40 dodge")
-                if self.choice3:
-                    self.dodge += 40
-                else:
-                    self.defence += 70
-        else:
-            if self.choice2:
-                print("Make your choice. Left button for +200 damage, Right button for +40 defence")
-                if self.choice3:
-                    self.defence += 40
-                else:
-                    self.dmg += 200
-            else:
-                print("Make your choice. Left button for +269 damage, Right button for +40 defence")
-                if self.choice3:
-                    self.defence += 40
-                else:
-                    self.dmg += 269
+        def update(self):
+            pass

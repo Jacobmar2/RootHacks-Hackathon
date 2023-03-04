@@ -1,11 +1,21 @@
-import boss, hero, battleFunctions
+import boss, hero, battleFunctions, evolutions
 
-hero_inst = hero.hero(50,500,0,0)
-
+# initialize hero
+hero_inst = hero.Hero(500, 50, 0, 0)
 hero_inst.print_stats()
+print("================")
 
-hero_inst.decision(1)
-
+# first evolution
+hero_inst = evolutions.upgrade(1)
 hero_inst.print_stats()
+print("================")
 
-hero_inst.decision2(1)
+# second evolution
+hero_inst = evolutions.upgrade(1)
+hero_inst.print_stats()
+print("================")
+
+# third evolution
+hero_inst = evolutions.upgrade(1)
+hero_inst.print_stats()
+print("================")
