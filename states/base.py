@@ -5,7 +5,7 @@ class BaseState(object):
         self.done = False
         self.quit = False
         self.next_state = None
-        self.screen_rect = pygame.display.get_surface.get_rect()
+        self.screen_rect = pygame.display.get_surface().get_rect()
         self.persist = {}
         self.font = pygame.font.Font(None, 24)
         
