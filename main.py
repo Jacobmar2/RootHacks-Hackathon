@@ -1,16 +1,10 @@
-# This is a sample Python script.
+# This is a game that follows a generation of heros battling a boss
+# After each hero dies, their children evolve and take their place
 
-# Press ⌃R to execute it or replace it with your code.
-# Press Double ⇧ to search everywhere for classes, files, tool windows, actions, and settings.
+# import modules
+import pygame
 
-
-def print_hi(name):
-    # Use a breakpoint in the code line below to debug your script.
-    print(f'Hi, {name}')  # Press ⌘F8 to toggle the breakpoint.
-
-
-# Press the green button in the gutter to run the script.
-if __name__ == '__main__':
-    print_hi('PyCharm')
-
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/
+# initiate pygame screen
+pygame.init()
+screen = pygame.display.set_mode((400, 500))
+done = False
