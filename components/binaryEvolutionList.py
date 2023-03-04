@@ -46,25 +46,25 @@ def stats(first, second, third):
 # upgrade = [dmg,def,dodge]
 def upgrade(value):
     # define global variables
-    global first, second, third
+    global un, deux, tois
     # check which place value to add to
-    if first == -1:
-        first = value
-    elif second == -1:
-        second = value
-    elif third == -1:
-        third = value
+    if un == -1:
+        un = value
+    elif deux == -1:
+        deux = value
+    elif tois == -1:
+        tois = value
     else:
         return -1
 
 
-    statLst = stats(first, second, third)
+    statLst = stats(un, deux, tois)
 
     hero_instance.uDmg(statLst[0])
     hero_instance.uDefence(statLst[1])
     hero_instance.uDodge(statLst[2])
 
 
-first = -1
-second = -1
-third = -1
+un = -1
+deux = -1
+tois = -1
