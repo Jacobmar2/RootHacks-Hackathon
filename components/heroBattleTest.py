@@ -6,16 +6,16 @@ hero_inst.print_stats()
 print("================")
 
 # first evolution
-hero_inst = evolutions.upgrade(1, -1, -1)
+hero_inst = evolutions.upgrade(1)
 hero_inst.print_stats()
 print("================")
 
 # second evolution
-hero_inst = evolutions.upgrade(1, 1, -1)
+hero_inst = evolutions.upgrade(1)
 hero_inst.print_stats()
 print("================")
 
 # third evolution
-hero_inst = evolutions.upgrade(1, 1, 1)
+hero_inst = evolutions.upgrade(1)
 hero_inst.print_stats()
 print("================")
