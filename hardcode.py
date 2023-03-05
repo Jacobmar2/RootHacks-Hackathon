@@ -1,5 +1,3 @@
-# ignore
-
 import pygame
 import time
 from components import hero, boss, battleFunctions
@@ -37,9 +35,15 @@ thirteenthFight = pygame.image.load("images/hardcode/fights/13.png")
 fourtheenthFight = pygame.image.load("images/hardcode/fights/14.png")
 fifteenthFight = pygame.image.load("images/hardcode/fights/15.png")
 lastFight = pygame.image.load("images/hardcode/fights/naruto.png")
+however = pygame.image.load("images/hardcode/fights/however.png")
+victory = pygame.image.load("images/hardcode/fights/victory.png")
+defeat = pygame.image.load("images/hardcode/fights/defeat.png")
+gameOver = pygame.image.load("images/hardcode/fights/gameOver.png")
 selection = [-1, -1, -1]
+run = True
+win = False
 # ===================================== welcome screen =====================================
-while True:
+while run:
     # Handle events
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
@@ -50,10 +54,11 @@ while True:
     # Update the display
     pygame.display.update()
     time.sleep(3)
-    break
+    run = False
 
 # ===================================== first battle =====================================
-while True:
+run = True
+while run:
     # Handle events
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
@@ -66,11 +71,17 @@ while True:
     # Update the display
     pygame.display.update()
     time.sleep(8)
-    break
-# ===================================== Win/Lose =====================================
-
-# ===================================== second battle =====================================
-while True:
+    if win:
+        pass
+    run = False
+# ===================================== Lose =====================================
+screen.blit(defeat, centre)
+# Update the display
+pygame.display.update()
+time.sleep(3)
+# ===================================== second select/battle =====================================
+run = True
+while run:
     screen.blit(firstSelect, centre)
     # Update the display
     pygame.display.update()
@@ -89,7 +100,9 @@ while True:
                 screen.blit(secondFight, centre)
                 pygame.display.update()
                 time.sleep(8)
-                break
+                run = False
+                if win:
+                    pass
             elif event.key == pygame.K_RIGHT:
                 selection[0] = 1
                 hero_instance.print_stats()
@@ -98,11 +111,17 @@ while True:
                 screen.blit(thirdFight, centre)
                 pygame.display.update()
                 time.sleep(8)
-                break
-# ===================================== win/lose =====================================
-
+                run = False
+                if win:
+                    pass
+# ===================================== Lose =====================================
+screen.blit(defeat, centre)
+# Update the display
+pygame.display.update()
+time.sleep(3)
 # ===================================== third battle =====================================
-while True:
+run = True
+while run:
     if selection[0] == 0:
         # Update the display
         screen.blit(secondSelect, centre)
@@ -128,7 +147,9 @@ while True:
                     screen.blit(fourthFight, centre)
                     pygame.display.update()
                     time.sleep(8)
-                    break
+                    run = False
+                    if win:
+                        pass
                 elif selection[0] == 1:
                     hero_instance.print_stats()
                     print("================")
@@ -136,7 +157,9 @@ while True:
                     screen.blit(fifthFight, centre)
                     pygame.display.update()
                     time.sleep(8)
-                    break
+                    run = False
+                    if win:
+                        pass
             elif event.key == pygame.K_RIGHT:
                 selection[1] = 1
                 if selection[0] == 0:
@@ -146,7 +169,9 @@ while True:
                     screen.blit(sixthFight, centre)
                     pygame.display.update()
                     time.sleep(8)
-                    break
+                    run = False
+                    if win:
+                        pass
                 elif selection[0] == 1:
                     hero_instance.print_stats()
                     print("================")
@@ -154,12 +179,18 @@ while True:
                     screen.blit(seventhFight, centre)
                     pygame.display.update()
                     time.sleep(8)
-                    break
+                    run = False
+                    if win:
+                        pass
 
-# ===================================== win/lose =====================================
-
-# ===================================== fourth battle =====================================
-while True:
+# ===================================== Lose =====================================
+screen.blit(defeat, centre)
+# Update the display
+pygame.display.update()
+time.sleep(3)
+# ===================================== fourth selection/battle =====================================
+run = True
+while run:
     if selection[0] == 0:
         if selection[1] == 0:
             # Update the display
@@ -196,15 +227,19 @@ while True:
                         screen.blit(eighthFight, centre)
                         pygame.display.update()
                         time.sleep(8)
-                        break
-                    elif selection [0] == 1:
+                        run = False
+                        if win:
+                            pass
+                    elif selection[0] == 1:
                         hero_instance.print_stats()
                         print("================")
                         # Update the display
                         screen.blit(ninthFight, centre)
                         pygame.display.update()
                         time.sleep(8)
-                        break
+                        run = False
+                        if win:
+                            pass
                 elif selection[1] == 1:
                     if selection[0] == 0:
                         hero_instance.print_stats()
@@ -213,15 +248,19 @@ while True:
                         screen.blit(tenthFight, centre)
                         pygame.display.update()
                         time.sleep(8)
-                        break
-                    elif selection [0] == 1:
+                        run = False
+                        if win:
+                            pass
+                    elif selection[0] == 1:
                         hero_instance.print_stats()
                         print("================")
                         # Update the display
                         screen.blit(eleventhFight, centre)
                         pygame.display.update()
                         time.sleep(8)
-                        break
+                        run = False
+                        if win:
+                            pass
 
             elif event.key == pygame.K_RIGHT:
                 selection[2] = 1
@@ -233,7 +272,9 @@ while True:
                         screen.blit(twelfthFight, centre)
                         pygame.display.update()
                         time.sleep(8)
-                        break
+                        run = False
+                        if win:
+                            pass
                     elif selection[0] == 1:
                         hero_instance.print_stats()
                         print("================")
@@ -241,7 +282,9 @@ while True:
                         screen.blit(thirteenthFight, centre)
                         pygame.display.update()
                         time.sleep(8)
-                        break
+                        run = False
+                        if win:
+                            pass
                 elif selection[1] == 1:
                     if selection[0] == 0:
                         hero_instance.print_stats()
@@ -250,7 +293,9 @@ while True:
                         screen.blit(fourteenthFight, centre)
                         pygame.display.update()
                         time.sleep(8)
-                        break
+                        run = False
+                        if win:
+                            pass
                     elif selection[0] == 1:
                         hero_instance.print_stats()
                         print("================")
@@ -258,4 +303,37 @@ while True:
                         screen.blit(fifteenthFight, centre)
                         pygame.display.update()
                         time.sleep(8)
-                        break
+                        run = False
+                        if win:
+                            pass
+
+# ===================================== game over =====================================
+screen.blit(gameOver, centre)
+# Update the display
+pygame.display.update()
+time.sleep(3)
+screen.blit(however, centre)
+# Update the display
+pygame.display.update()
+time.sleep(3)
+# ===================================== Last Fight =====================================
+run = True
+while run:
+    # Handle events
+    for event in pygame.event.get():
+        if event.type == pygame.QUIT:
+            pygame.quit()
+            quit()
+
+    screen.blit(lastFight, centre)
+    # Update the display
+    pygame.display.update()
+    time.sleep(3)
+    run = False
+
+# ===================================== Win =====================================
+if run == False:
+    screen.blit(victory, centre)
+    # Update the display
+    pygame.display.update()
+    time.sleep(3)
