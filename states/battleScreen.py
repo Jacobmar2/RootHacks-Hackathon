@@ -31,10 +31,13 @@ class Battle(BaseState):
                 self.done = True
 
     def update(self, dt):
-        pygame.display.get_surface().fill(pygame.Color("black"))
+        background = pygame.image.load('images/BattleBackground.webp')
+        background = pygame.transform.scale(background,(800,600))
+        pygame.display.get_surface().blit(background,(0,0))
         self.o.move()
         pygame.display.get_surface().blit(self.o.image, self.o.pos)
         pygame.display.update()
+
         
 class PlaceholderMovement:
     def __init__(self, image, height, speed):
