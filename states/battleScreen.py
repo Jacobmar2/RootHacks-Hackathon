@@ -11,9 +11,8 @@ class Battle(BaseState):
         self.character = pygame.image.load('images/Grass sprite.png')
         self.character = pygame.transform.scale(self.character, (100, 200))
         self.character_spawn = self.character.get_rect(center=self.screen_rect.center)
-        self.x = 0
-        self.y = 0
-        self.o = PlaceholderMovement(self.character, self.y, 10)
+
+        self.o = CharacterMovement(self.character, self.y, 10)
         self.screen = pygame.display.get_surface()
         self.next_state = "VICTORY"
 
