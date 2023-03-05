@@ -7,10 +7,11 @@ class Battle(BaseState):
         super(Battle, self).__init__()
         self.rect = pygame.Rect((0, 0), (80, 80))
         self.rect.center = self.screen_rect.center
-        self.character = pygame.image.load('images/plantguy.png')
+        self.character = pygame.image.load('images/Grass sprite.png')
+        self.character = pygame.transform.scale(self.character, (100, 200))
         self.character_spawn = self.character.get_rect(center=self.screen_rect.center)
-        self.x = 0
-        self.y = 0
+       # self.x = 500
+        self.y = 300
         self.o = PlaceholderMovement(self.character, self.y, 10)
         self.screen = pygame.display.get_surface()
         self.next_state = "VICTORY"
@@ -45,14 +46,14 @@ class PlaceholderMovement:
         self.image = image
         self.image.convert_alpha()     # optimise alpha
         self.image.set_colorkey(ALPHA) # set alpha
-        self.pos = image.get_rect().move(0, height)
+        self.pos = image.get_rect().move(100, height)
         self.rect = image.get_rect()
 
         self.counter = 0
 
 
     def move(self):
-        distance = 80
+        distance = 40
         speed = 8
 
         if self.counter >= 0 and self.counter <= distance:
@@ -63,6 +64,32 @@ class PlaceholderMovement:
             self.counter = 0
 
         self.counter += 1
+
+    class Player:
+        def __init__(self, image, height, width, speed):
+            self.speed = speed
+            self.image = image
+            self.pos = image.get_rect().move(100, height)
+            self.rect = image.get_rect()
+            self.width = self.rect.x
+            self.height = self.rect.y
+            self.counter = 0
+        def move(self): 
+            distance = 40
+            speed = 8
+
+            if self.counter >= 0 and self.counter <= distance:
+                self.pos.right += speed
+            elif self.counter >= distance and self.counter <= distance*2:
+                self.pos.right -= speed
+            else:
+                self.counter = 0
+
+            self.counter += 1
+
+
+
+
 
 
 '''
@@ -76,4 +103,4 @@ class PlaceholderMovement:
             self.pos.top += self.speed
         if up:
             self.pos.top -= self.speed
- '''    
+'''    
