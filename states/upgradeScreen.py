@@ -37,7 +37,7 @@ class Upgrade(BaseState):
 
 
     def draw(self, surface):
-        surface.fill("")
+        surface.fill(pygame.Color((44, 51, 51)))
 
     def update(self, dt):
         self.draw()
