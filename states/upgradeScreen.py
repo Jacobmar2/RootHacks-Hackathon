@@ -9,7 +9,7 @@ class Upgrade(BaseState):
         self.next_state = "BATTLE"
         
     def render_text(self, index):
-        color = pygame.Color("red") if index == self.active_index else pygame.Color("white")
+        color = pygame.Color((203, 228, 222)) if index == self.active_index else pygame.Color((14, 131, 136))
         return self.font.render(self.options[index], True, color)
     
     def get_text_position(self, text, index):
@@ -35,7 +35,7 @@ class Upgrade(BaseState):
                 self.handle_action()
            
     def draw(self, surface):
-        surface.fill(pygame.Color("black"))
+        surface.fill(pygame.Color((44, 51, 51)))
         for index, option in enumerate(self.options):   # Loops to update text when button is pressed
             text_render = self.render_text(index)
             surface.blit(text_render, self.get_text_position(text_render, index))

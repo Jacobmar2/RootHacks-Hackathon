@@ -21,6 +21,6 @@ class Victory(BaseState):
                 self.quit = True
 
     def draw(self, surface):
-        surface.fill(pygame.Color("black"))
+        surface.fill(pygame.Color((44, 51, 51)))
         surface.blit(self.title, self.title_rect)
         surface.blit(self.instructions, self.instructions_rect)
