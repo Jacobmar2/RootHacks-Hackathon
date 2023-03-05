@@ -9,6 +9,7 @@ counter = 2
 class Upgrade(BaseState):
     def __init__(self):
         super().__init__()
+        self.quit = None
         global counter
         self.active_index = 0  # Variable that holds if left/right key were pressed
         self.options = ["Left", "Right"]
@@ -33,8 +34,18 @@ class Upgrade(BaseState):
         return text.get_rect(center=center)
 
     def handle_action(self):
-        # TODO: Implement the functionality for the Left/Right buttons
-        pass
+        hero_inst = hero.Hero(500, 50, 0, 0)
+        if event.type == pygame.QUIT:
+            self.quit = True
+        elif event.type == pygame.K_LEFT:
+            hero_inst = evolutions.upgrade(0)
+            return hero_inst
+            self.done = True
+        elif event.key == pygame.K_SPACE:
+            hero_inst = evolutions.upgrade(2)
+            return hero_inst
+            self.done = True
+
 
     # Controls
     def get_event(self, event):
@@ -62,7 +73,7 @@ class Upgrade(BaseState):
         surface.blit(self.left_image, self.left_rect)
         surface.blit(self.right_image, self.right_rect)
 
-    def update(self, dt):
+    def update(self):
         global counter
         counter += 1
         evo = str(counter)
