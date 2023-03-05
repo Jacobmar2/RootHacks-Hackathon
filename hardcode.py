@@ -107,8 +107,6 @@ while run:
                 win = battleFunctions.battle(130, 0, 0)
                 time.sleep(4)
                 run = False
-                if win:
-                    pass
             elif event.key == pygame.K_RIGHT:
                 selection[0] = 1
                 hero_instance.print_stats()
@@ -119,8 +117,6 @@ while run:
                 win = battleFunctions.battle(50, 30, 0)
                 time.sleep(4)
                 run = False
-                if win:
-                    pass
 # ===================================== Lose =====================================
 if win:
     screen.blit(victory, centre)
@@ -173,8 +169,6 @@ while run:
                     win = battleFunctions.battle(130, 0, 30)
                     time.sleep(4)
                     run = False
-                    if win:
-                        pass
             elif event.key == pygame.K_RIGHT:
                 selection[1] = 1
                 if selection[0] == 0:
@@ -186,8 +180,6 @@ while run:
                     win = battleFunctions.battle(100, 30, 0)
                     time.sleep(4)
                     run = False
-                    if win:
-                        pass
                 elif selection[0] == 1:
                     hero_instance.print_stats()
                     print("================")
@@ -197,8 +189,6 @@ while run:
                     win = battleFunctions.battle(50, 30, 50)
                     time.sleep(4)
                     run = False
-                    if win:
-                        pass
 
 # ===================================== Lose =====================================
 if win:
@@ -252,8 +242,6 @@ while run:
                         win = battleFunctions.battle(499, 0, 0)
                         time.sleep(4)
                         run = False
-                        if win:
-                            pass
                     elif selection[0] == 1:
                         hero_instance.print_stats()
                         print("================")
@@ -263,8 +251,6 @@ while run:
                         win = battleFunctions.battle(230, 40, 0)
                         time.sleep(4)
                         run = False
-                        if win:
-                            pass
                 elif selection[1] == 1:
                     if selection[0] == 0:
                         hero_instance.print_stats()
@@ -275,8 +261,6 @@ while run:
                         win = battleFunctions.battle(330, 0, 30)
                         time.sleep(4)
                         run = False
-                        if win:
-                            pass
                     elif selection[0] == 1:
                         hero_instance.print_stats()
                         print("================")
@@ -286,8 +270,6 @@ while run:
                         win = battleFunctions.battle(130, 40, 30)
                         time.sleep(4)
                         run = False
-                        if win:
-                            pass
 
             elif event.key == pygame.K_RIGHT:
                 selection[2] = 1
@@ -301,8 +283,6 @@ while run:
                         win = battleFunctions.battle(100, 100, 0)
                         time.sleep(4)
                         run = False
-                        if win:
-                            pass
                     elif selection[0] == 1:
                         hero_instance.print_stats()
                         print("================")
@@ -312,8 +292,6 @@ while run:
                         win = battleFunctions.battle(100, 30, 40)
                         time.sleep(4)
                         run = False
-                        if win:
-                            pass
                 elif selection[1] == 1:
                     if selection[0] == 0:
                         hero_instance.print_stats()
@@ -324,8 +302,6 @@ while run:
                         win = battleFunctions.battle(200, 0, 50)
                         time.sleep(4)
                         run = False
-                        if win:
-                            pass
                     elif selection[0] == 1:
                         hero_instance.print_stats()
                         print("================")
@@ -335,8 +311,6 @@ while run:
                         win = battleFunctions.battle(50, 30, 90)
                         time.sleep(4)
                         run = False
-                        if win:
-                            pass
 
 # ===================================== game over =====================================
 if win:
@@ -374,5 +348,5 @@ if run == False:
     # Update the display
     pygame.display.update()
     while True:
-        print("* * * * * * * * * * * * * * * Victory * * * * * * * * * * * * * * *")
-        print(" * * * * * * * * * * * * * * *Victory* * * * * * * * * * * * * * * ")
+        print("""*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-Victory-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*
+                 -*-*-*-*-*-*-*-*-*-*-*-*-*-*-*Victory*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-""")
