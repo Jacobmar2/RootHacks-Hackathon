@@ -1,12 +1,16 @@
-import pygame, components.evolutions, images.upgrades
-from .base import BaseState
 import pygame
-from .base import BaseState
+from components import evolutions, hero
+from images import upgrades
+from stateManager.base import BaseState
+
+counter = 2
+
 
 class Upgrade(BaseState):
     def __init__(self):
+        super().__init__()
+        self.quit = None
         global counter
-        super(Upgrade, self).__init__()
         self.active_index = 0  # Variable that holds if left/right key were pressed
         self.options = ["Left", "Right"]
         self.next_state = "BATTLE"
@@ -15,6 +19,7 @@ class Upgrade(BaseState):
         counter += 1
         evo = str(counter)
         self.right_image = pygame.image.load(f"{evo}.png").convert_alpha()
+        counter += 1
         self.image_width = 400
         self.image_height = 600
         self.left_rect = pygame.Rect(0, 0, self.image_width, self.image_height)
@@ -29,10 +34,18 @@ class Upgrade(BaseState):
         return text.get_rect(center=center)
 
     def handle_action(self):
-        if self.active_index == 0:
-            self.done = True
-        elif self.active_index == 1:
+        hero_inst = hero.Hero(500, 50, 0, 0)
+        if event.type == pygame.QUIT:
             self.quit = True
+        elif event.type == pygame.K_LEFT:
+            hero_inst = evolutions.upgrade(0)
+            return hero_inst
+            self.done = True
+        elif event.key == pygame.K_SPACE:
+            hero_inst = evolutions.upgrade(2)
+            return hero_inst
+            self.done = True
+
 
     # Controls
     def get_event(self, event):
@@ -52,12 +65,6 @@ class Upgrade(BaseState):
                 self.handle_action()
 
     def draw(self, surface):
-<<<<<<< Updated upstream
-        surface.fill(pygame.Color((44, 51, 51)))
-
-    def update(self, dt):
-        self.draw()
-=======
         surface.fill(pygame.Color("black"))
         for index, option in enumerate(self.options):
             text_render = self.render_text(index)
@@ -66,5 +73,11 @@ class Upgrade(BaseState):
         surface.blit(self.left_image, self.left_rect)
         surface.blit(self.right_image, self.right_rect)
 
-counter = 2
->>>>>>> Stashed changes
+    def update(self):
+        global counter
+        counter += 1
+        evo = str(counter)
+        self.left_image = pygame.image.load(f"{evo}.png").convert_alpha()
+        counter += 1
+        evo = str(counter)
+        self.right_image = pygame.image.load(f"{evo}.png").convert_alpha()
