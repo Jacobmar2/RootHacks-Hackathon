@@ -2,6 +2,7 @@ import pygame
 from .base import BaseState
 from ..components.hero import Hero
 
+ALPHA = (0, 255, 0)
 class Battle(BaseState):
     def __init__(self):
         super(Battle, self).__init__()
@@ -18,11 +19,14 @@ class Battle(BaseState):
         self.player.move()
         pygame.display.get_surface().blit(self.player.image, self.player.pos)
         pygame.display.update()
+
         
 class CharacterMovement:
     def __init__(self, image, height, speed):
         self.speed = speed
         self.image = image
+        self.image.convert_alpha()     # optimise alpha
+        self.image.set_colorkey(ALPHA) # set alpha
         self.pos = image.get_rect().move(0, height)
         self.rect = image.get_rect()
 
