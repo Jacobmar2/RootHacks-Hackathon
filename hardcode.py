@@ -53,7 +53,7 @@ while run:
     screen.blit(welcome, centre)
     # Update the display
     pygame.display.update()
-    time.sleep(3)
+    time.sleep(5)
     run = False
 
 # ===================================== first battle =====================================
@@ -67,14 +67,19 @@ while run:
 
     hero_instance.print_stats()
     print("================")
-    screen.blit(firstFight, centre)
     # Update the display
+    screen.blit(firstFight, centre)
     pygame.display.update()
-    time.sleep(8)
-    if win:
-        pass
+    win = battleFunctions.battle(100, 0, 0)
+    time.sleep(4)
     run = False
 # ===================================== Lose =====================================
+if win:
+    screen.blit(victory, centre)
+    # Update the display
+    pygame.display.update()
+    while True:
+        print("****************************** Victory ******************************")
 screen.blit(defeat, centre)
 # Update the display
 pygame.display.update()
@@ -99,7 +104,8 @@ while run:
                 # Update the display
                 screen.blit(secondFight, centre)
                 pygame.display.update()
-                time.sleep(8)
+                win = battleFunctions.battle(130, 0, 0)
+                time.sleep(4)
                 run = False
                 if win:
                     pass
@@ -110,15 +116,22 @@ while run:
                 # Update the display
                 screen.blit(thirdFight, centre)
                 pygame.display.update()
-                time.sleep(8)
+                win = battleFunctions.battle(50, 30, 0)
+                time.sleep(4)
                 run = False
                 if win:
                     pass
 # ===================================== Lose =====================================
+if win:
+    screen.blit(victory, centre)
+    # Update the display
+    pygame.display.update()
+    while True:
+        print("****************************** Victory ******************************")
 screen.blit(defeat, centre)
 # Update the display
 pygame.display.update()
-time.sleep(3)
+time.sleep(4)
 # ===================================== third battle =====================================
 run = True
 while run:
@@ -146,7 +159,8 @@ while run:
                     # Update the display
                     screen.blit(fourthFight, centre)
                     pygame.display.update()
-                    time.sleep(8)
+                    win = battleFunctions.battle(230, 0, 0)
+                    time.sleep(4)
                     run = False
                     if win:
                         pass
@@ -156,7 +170,8 @@ while run:
                     # Update the display
                     screen.blit(fifthFight, centre)
                     pygame.display.update()
-                    time.sleep(8)
+                    win = battleFunctions.battle(130, 0, 30)
+                    time.sleep(4)
                     run = False
                     if win:
                         pass
@@ -168,7 +183,8 @@ while run:
                     # Update the display
                     screen.blit(sixthFight, centre)
                     pygame.display.update()
-                    time.sleep(8)
+                    win = battleFunctions.battle(100, 30, 0)
+                    time.sleep(4)
                     run = False
                     if win:
                         pass
@@ -178,12 +194,19 @@ while run:
                     # Update the display
                     screen.blit(seventhFight, centre)
                     pygame.display.update()
-                    time.sleep(8)
+                    win = battleFunctions.battle(50, 30, 50)
+                    time.sleep(4)
                     run = False
                     if win:
                         pass
 
 # ===================================== Lose =====================================
+if win:
+    screen.blit(victory, centre)
+    # Update the display
+    pygame.display.update()
+    while True:
+        print("****************************** Victory ******************************")
 screen.blit(defeat, centre)
 # Update the display
 pygame.display.update()
@@ -226,7 +249,8 @@ while run:
                         # Update the display
                         screen.blit(eighthFight, centre)
                         pygame.display.update()
-                        time.sleep(8)
+                        win = battleFunctions.battle(499, 0, 0)
+                        time.sleep(4)
                         run = False
                         if win:
                             pass
@@ -236,7 +260,8 @@ while run:
                         # Update the display
                         screen.blit(ninthFight, centre)
                         pygame.display.update()
-                        time.sleep(8)
+                        win = battleFunctions.battle(230, 40, 0)
+                        time.sleep(4)
                         run = False
                         if win:
                             pass
@@ -247,7 +272,8 @@ while run:
                         # Update the display
                         screen.blit(tenthFight, centre)
                         pygame.display.update()
-                        time.sleep(8)
+                        win = battleFunctions.battle(330, 0, 30)
+                        time.sleep(4)
                         run = False
                         if win:
                             pass
@@ -257,7 +283,8 @@ while run:
                         # Update the display
                         screen.blit(eleventhFight, centre)
                         pygame.display.update()
-                        time.sleep(8)
+                        win = battleFunctions.battle(130, 40, 30)
+                        time.sleep(4)
                         run = False
                         if win:
                             pass
@@ -271,7 +298,8 @@ while run:
                         # Update the display
                         screen.blit(twelfthFight, centre)
                         pygame.display.update()
-                        time.sleep(8)
+                        win = battleFunctions.battle(100, 100, 0)
+                        time.sleep(4)
                         run = False
                         if win:
                             pass
@@ -281,7 +309,8 @@ while run:
                         # Update the display
                         screen.blit(thirteenthFight, centre)
                         pygame.display.update()
-                        time.sleep(8)
+                        win = battleFunctions.battle(100, 30, 40)
+                        time.sleep(4)
                         run = False
                         if win:
                             pass
@@ -292,7 +321,8 @@ while run:
                         # Update the display
                         screen.blit(fourteenthFight, centre)
                         pygame.display.update()
-                        time.sleep(8)
+                        win = battleFunctions.battle(200, 0, 50)
+                        time.sleep(4)
                         run = False
                         if win:
                             pass
@@ -302,20 +332,27 @@ while run:
                         # Update the display
                         screen.blit(fifteenthFight, centre)
                         pygame.display.update()
-                        time.sleep(8)
+                        win = battleFunctions.battle(50, 30, 90)
+                        time.sleep(4)
                         run = False
                         if win:
                             pass
 
 # ===================================== game over =====================================
+if win:
+    screen.blit(victory, centre)
+    # Update the display
+    pygame.display.update()
+    while True:
+        print("****************************** Victory ******************************")
 screen.blit(gameOver, centre)
 # Update the display
 pygame.display.update()
-time.sleep(3)
+time.sleep(4)
 screen.blit(however, centre)
 # Update the display
 pygame.display.update()
-time.sleep(3)
+time.sleep(5)
 # ===================================== Last Fight =====================================
 run = True
 while run:
@@ -336,4 +373,6 @@ if run == False:
     screen.blit(victory, centre)
     # Update the display
     pygame.display.update()
-    time.sleep(3)
+    while True:
+        print("* * * * * * * * * * * * * * * Victory * * * * * * * * * * * * * * *")
+        print(" * * * * * * * * * * * * * * *Victory* * * * * * * * * * * * * * * ")

@@ -42,14 +42,14 @@ def stats(first, second, third):
 
 
 # upgrade = [dmg,def,dodge]
-def upgrade(value):
-    global first, second, third
-    if first == -1:
-        first = value
-    elif second == -1:
-        second = value
-    elif third == -1:
-        third = value
+def upgrade(first, second, third):
+    # global first, second, third
+    # if first == -1:
+    #     first = value
+    # elif second == -1:
+    #     second = value
+    # elif third == -1:
+    #     third = value
     # create an instance of the hero class
     hero_instance = hero.Hero(0, 0, 0, 0)
 
@@ -61,7 +61,7 @@ def upgrade(value):
     hero_instance.uDodge(new_dodge=statLst[2])
     return hero_instance
 
-
-first = -1
-second = -1
-third = -1
+#
+# first = -1
+# second = -1
+# third = -1
