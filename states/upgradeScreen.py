@@ -39,11 +39,9 @@ class Upgrade(BaseState):
             self.quit = True
         elif event.type == pygame.K_LEFT:
             hero_inst = evolutions.upgrade(0)
-            return hero_inst
             self.done = True
-        elif event.key == pygame.K_SPACE:
+        elif event.key == pygame.K_RIGHT:
             hero_inst = evolutions.upgrade(2)
-            return hero_inst
             self.done = True
 
 
