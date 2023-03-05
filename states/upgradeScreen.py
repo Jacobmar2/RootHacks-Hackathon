@@ -1,12 +1,24 @@
 import pygame, components.evolutions, images.upgrades
 from .base import BaseState
+import pygame
+from .base import BaseState
 
 class Upgrade(BaseState):
     def __init__(self):
+        global counter
         super(Upgrade, self).__init__()
-        self.active_index = 0   # Variable that holds if left/right key were pressed
-        self.options = ["Left, Right"]
+        self.active_index = 0  # Variable that holds if left/right key were pressed
+        self.options = ["Left", "Right"]
         self.next_state = "BATTLE"
+        evo = str(counter)
+        self.left_image = pygame.image.load(f"{evo}.png").convert_alpha()
+        counter += 1
+        evo = str(counter)
+        self.right_image = pygame.image.load(f"{evo}.png").convert_alpha()
+        self.image_width = 400
+        self.image_height = 600
+        self.left_rect = pygame.Rect(0, 0, self.image_width, self.image_height)
+        self.right_rect = pygame.Rect(self.screen_rect.width - self.image_width, 0, self.image_width, self.image_height)
 
     def render_text(self, index):
         color = pygame.Color((203, 228, 222)) if index == self.active_index else pygame.Color((14, 131, 136))
@@ -27,17 +39,32 @@ class Upgrade(BaseState):
         if event.type == pygame.QUIT:
             self.quit = True
         elif event.type == pygame.MOUSEBUTTONDOWN:
-            if left_side.collidepoint(pygame.mouse.get_pos()):
-                self.active_index = 0
-                self.handle_action()
+            if self.left_rect.collidepoint(event.pos):
                 self.done = True
-            elif right_side.collidepoint(pygame.mouse.get_pos()):
-                self.active_index = 1
+            elif self.right_rect.collidepoint(event.pos):
+                self.quit = True
+        elif event.type == pygame.KEYUP:
+            if event.key == pygame.K_RIGHT:
+                self.active_index = 1 if self.active_index <= 0 else 0
+            elif event.key == pygame.K_LEFT:
+                self.active_index = 0 if self.active_index >= 1 else 1
+            elif event.key == pygame.K_RETURN:
                 self.handle_action()
-
 
     def draw(self, surface):
+<<<<<<< Updated upstream
         surface.fill(pygame.Color((44, 51, 51)))
 
     def update(self, dt):
         self.draw()
+=======
+        surface.fill(pygame.Color("black"))
+        for index, option in enumerate(self.options):
+            text_render = self.render_text(index)
+            surface.blit(text_render, self.get_text_position(text_render, index))
+        # draw the images
+        surface.blit(self.left_image, self.left_rect)
+        surface.blit(self.right_image, self.right_rect)
+
+counter = 2
+>>>>>>> Stashed changes
